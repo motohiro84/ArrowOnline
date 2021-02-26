@@ -1,73 +1,203 @@
 fileFormatVersion: 2
 guid: 0a7e897a46ba3414a880ad53dd2aa70e
 ModelImporter:
-  serializedVersion: 23
-  fileIDToRecycleName:
-    100000: WB3.down.bone
-    100002: WB3.down.bone.001
-    100004: WB3.down.bone.002
-    100006: WB3.down.bone.003
-    100008: WB3.down.bone.004
-    100010: WB3.down.bone.005
-    100012: WB3.down.bone.005_end
-    100014: WB3.down.horn
-    100016: WB3.down.horn_end
-    100018: WB3.down.ik
-    100020: WB3.down.ik_end
-    100022: WB3.down.shoulder
-    100024: WB3.main
-    100026: WB3.string
-    100028: WB3.string_end
-    100030: WB3.top.bone
-    100032: WB3.top.bone.001
-    100034: WB3.top.bone.002
-    100036: WB3.top.bone.003
-    100038: WB3.top.bone.005
-    100040: WB3.top.bone.006
-    100042: WB3.top.bone.006_end
-    100044: WB3.top.horn
-    100046: WB3.top.horn_end
-    100048: WB3.top.ik
-    100050: WB3.top.ik_end
-    100052: WB3.top.shoulder
-    100054: Wooden Bow_3
-    100056: //RootNode
-    100058: wooden bow_3
-    400000: WB3.down.bone
-    400002: WB3.down.bone.001
-    400004: WB3.down.bone.002
-    400006: WB3.down.bone.003
-    400008: WB3.down.bone.004
-    400010: WB3.down.bone.005
-    400012: WB3.down.bone.005_end
-    400014: WB3.down.horn
-    400016: WB3.down.horn_end
-    400018: WB3.down.ik
-    400020: WB3.down.ik_end
-    400022: WB3.down.shoulder
-    400024: WB3.main
-    400026: WB3.string
-    400028: WB3.string_end
-    400030: WB3.top.bone
-    400032: WB3.top.bone.001
-    400034: WB3.top.bone.002
-    400036: WB3.top.bone.003
-    400038: WB3.top.bone.005
-    400040: WB3.top.bone.006
-    400042: WB3.top.bone.006_end
-    400044: WB3.top.horn
-    400046: WB3.top.horn_end
-    400048: WB3.top.ik
-    400050: WB3.top.ik_end
-    400052: WB3.top.shoulder
-    400054: //RootNode
-    400056: Wooden Bow_3
-    400058: wooden bow_3
-    2100000: Wooden bow_3
-    4300000: wooden bow_3
-    7400000: Wooden Bow_3|Wooden Bow_3Action.001
-    9500000: //RootNode
-    13700000: wooden bow_3
+  serializedVersion: 20101
+  internalIDToNameTable:
+  - first:
+      1: 100000
+    second: WB3.down.bone
+  - first:
+      1: 100002
+    second: WB3.down.bone.001
+  - first:
+      1: 100004
+    second: WB3.down.bone.002
+  - first:
+      1: 100006
+    second: WB3.down.bone.003
+  - first:
+      1: 100008
+    second: WB3.down.bone.004
+  - first:
+      1: 100010
+    second: WB3.down.bone.005
+  - first:
+      1: 100012
+    second: WB3.down.bone.005_end
+  - first:
+      1: 100014
+    second: WB3.down.horn
+  - first:
+      1: 100016
+    second: WB3.down.horn_end
+  - first:
+      1: 100018
+    second: WB3.down.ik
+  - first:
+      1: 100020
+    second: WB3.down.ik_end
+  - first:
+      1: 100022
+    second: WB3.down.shoulder
+  - first:
+      1: 100024
+    second: WB3.main
+  - first:
+      1: 100026
+    second: WB3.string
+  - first:
+      1: 100028
+    second: WB3.string_end
+  - first:
+      1: 100030
+    second: WB3.top.bone
+  - first:
+      1: 100032
+    second: WB3.top.bone.001
+  - first:
+      1: 100034
+    second: WB3.top.bone.002
+  - first:
+      1: 100036
+    second: WB3.top.bone.003
+  - first:
+      1: 100038
+    second: WB3.top.bone.005
+  - first:
+      1: 100040
+    second: WB3.top.bone.006
+  - first:
+      1: 100042
+    second: WB3.top.bone.006_end
+  - first:
+      1: 100044
+    second: WB3.top.horn
+  - first:
+      1: 100046
+    second: WB3.top.horn_end
+  - first:
+      1: 100048
+    second: WB3.top.ik
+  - first:
+      1: 100050
+    second: WB3.top.ik_end
+  - first:
+      1: 100052
+    second: WB3.top.shoulder
+  - first:
+      1: 100054
+    second: Wooden Bow_3
+  - first:
+      1: 100056
+    second: //RootNode
+  - first:
+      1: 100058
+    second: wooden bow_3
+  - first:
+      4: 400000
+    second: WB3.down.bone
+  - first:
+      4: 400002
+    second: WB3.down.bone.001
+  - first:
+      4: 400004
+    second: WB3.down.bone.002
+  - first:
+      4: 400006
+    second: WB3.down.bone.003
+  - first:
+      4: 400008
+    second: WB3.down.bone.004
+  - first:
+      4: 400010
+    second: WB3.down.bone.005
+  - first:
+      4: 400012
+    second: WB3.down.bone.005_end
+  - first:
+      4: 400014
+    second: WB3.down.horn
+  - first:
+      4: 400016
+    second: WB3.down.horn_end
+  - first:
+      4: 400018
+    second: WB3.down.ik
+  - first:
+      4: 400020
+    second: WB3.down.ik_end
+  - first:
+      4: 400022
+    second: WB3.down.shoulder
+  - first:
+      4: 400024
+    second: WB3.main
+  - first:
+      4: 400026
+    second: WB3.string
+  - first:
+      4: 400028
+    second: WB3.string_end
+  - first:
+      4: 400030
+    second: WB3.top.bone
+  - first:
+      4: 400032
+    second: WB3.top.bone.001
+  - first:
+      4: 400034
+    second: WB3.top.bone.002
+  - first:
+      4: 400036
+    second: WB3.top.bone.003
+  - first:
+      4: 400038
+    second: WB3.top.bone.005
+  - first:
+      4: 400040
+    second: WB3.top.bone.006
+  - first:
+      4: 400042
+    second: WB3.top.bone.006_end
+  - first:
+      4: 400044
+    second: WB3.top.horn
+  - first:
+      4: 400046
+    second: WB3.top.horn_end
+  - first:
+      4: 400048
+    second: WB3.top.ik
+  - first:
+      4: 400050
+    second: WB3.top.ik_end
+  - first:
+      4: 400052
+    second: WB3.top.shoulder
+  - first:
+      4: 400054
+    second: //RootNode
+  - first:
+      4: 400056
+    second: Wooden Bow_3
+  - first:
+      4: 400058
+    second: wooden bow_3
+  - first:
+      21: 2100000
+    second: Wooden bow_3
+  - first:
+      43: 4300000
+    second: wooden bow_3
+  - first:
+      74: 7400000
+    second: Wooden Bow_3|Wooden Bow_3Action.001
+  - first:
+      95: 9500000
+    second: //RootNode
+  - first:
+      137: 13700000
+    second: wooden bow_3
   externalObjects:
   - first:
       type: UnityEngine:Material
@@ -75,7 +205,7 @@ ModelImporter:
       name: Wooden bow_3
     second: {fileID: 2100000, guid: 52f73a9e523990d45ae9ff7a5d204a9d, type: 2}
   materials:
-    importMaterials: 1
+    materialImportMode: 1
     materialName: 0
     materialSearch: 1
     materialLocation: 1
@@ -100,41 +230,81 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Wooden Bow_3|Wooden Bow_3Action.001
+      takeName: Wooden Bow_3|Wooden Bow_3Action.001
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
     addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
     importLights: 1
+    fileIdsGeneration: 1
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
-    optimizeMeshForGPU: 1
     keepQuads: 0
     weldVertices: 1
+    bakeAxisConversion: 0
     preserveHierarchy: 0
+    skinWeightsMode: 0
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
     indexFormat: 0
     secondaryUVAngleDistortion: 8
     secondaryUVAreaDistortion: 15.000001
     secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 0
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
     secondaryUVPackMargin: 4
     useFileScale: 1
-    previousCalculatedGlobalScale: 0.01
-    hasPreviousCalculatedGlobalScale: 1
   tangentSpace:
     normalSmoothAngle: 60
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
   importAnimation: 1
-  copyAvatar: 0
   humanDescription:
-    serializedVersion: 2
+    serializedVersion: 3
     human: []
     skeleton: []
     armTwist: 0.5
@@ -144,14 +314,16 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
+    globalScale: 1
     rootMotionBoneName: 
-    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
   animationType: 2
   humanoidOversampling: 1
+  avatarSetup: 1
   additionalBone: 0
   userData: 
   assetBundleName: 
