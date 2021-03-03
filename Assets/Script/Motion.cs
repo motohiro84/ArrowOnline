@@ -29,6 +29,12 @@ public class Motion : MonoBehaviour
     return Input.GetMouseButtonDown(0);
   }
 
+  public void ShotMotion()
+  {
+    state = "Shot";
+    animator.SetTrigger(state);
+  }
+
   void Shot()
   {
     animator.SetTrigger("Shot");
