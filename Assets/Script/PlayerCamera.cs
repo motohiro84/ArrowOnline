@@ -13,6 +13,8 @@ public class PlayerCamera : MonoBehaviour
   {
     CameraTransform = Camera.GetComponent<Transform>();
     CameraTransform.Rotate(360f, 0, 0);
+    Cursor.visible = false;
+    Cursor.lockState = CursorLockMode.Locked;
   }
 
   // Update is called once per frame
