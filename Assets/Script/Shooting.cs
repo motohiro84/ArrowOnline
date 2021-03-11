@@ -11,23 +11,30 @@ public class Shooting : MonoBehaviour
 
   void Update()
   {
-    shotInterval += 1;
+    shotInterval++;
     if (shotInterval > 18 && Input.GetMouseButtonDown(0))
     {
-      ArrowShot();
+      StartCoroutine("FireShot");
     }
   }
 
-  void ArrowShot()
+  private IEnumerator FireShot()
   {
+    for (int i = 1; i < 5; i++)
+    {
+      yield return new WaitForSeconds(0.25f);
 
-    GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.eulerAngles.x + 90, transform.eulerAngles.y, transform.eulerAngles.z - 15));
-    Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
-    bulletRb.AddForce(transform.forward * shotSpeed);
+      if (i == 2)
+      {
 
-    Destroy(bullet, 3.0f);
-    shotInterval = 0;
+        GameObject bullet = (GameObject)Instantiate(bulletPrefab, transform.position, Quaternion.Euler(transform.eulerAngles.x + 90, transform.eulerAngles.y, transform.eulerAngles.z - 15));
+        Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
+        bulletRb.AddForce(transform.forward * shotSpeed);
 
+        Destroy(bullet, 3.0f);
+        yield break;
+      }
+    }
   }
 
 }
