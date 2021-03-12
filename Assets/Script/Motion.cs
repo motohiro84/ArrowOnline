@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class Motion : MonoBehaviour
 {
+  public GameObject WoodenBow;
+
+  private Animator BowAnimator;
   private Animator animator;
-  private string state;
   AnimatorStateInfo animatorStateInfo;
+
   void Start()
   {
     animator = this.gameObject.GetComponent<Animator>();
+    BowAnimator = WoodenBow.GetComponent<Animator>();
   }
-
 
   void Update()
   {
     animatorStateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
-    if (GetInput())
+    if (GetInput() && Shooting.IntervalKey)
     {
       Shot();
     }
@@ -32,6 +35,7 @@ public class Motion : MonoBehaviour
   void Shot()
   {
     animator.SetTrigger("Shot");
+    BowAnimator.SetTrigger("Shot");
   }
 
   public void MoveMotion(float speed)

@@ -7,20 +7,21 @@ public class Shooting : MonoBehaviour
 
   public GameObject bulletPrefab;
   public float shotSpeed;
-  private float shotInterval;
+  public static bool IntervalKey = true;
 
   void Update()
   {
-    shotInterval++;
-    if (shotInterval > 18 && Input.GetMouseButtonDown(0))
+    if (IntervalKey && Input.GetMouseButtonDown(0))
     {
+      IntervalKey = false;
       StartCoroutine("FireShot");
     }
   }
 
+
   private IEnumerator FireShot()
   {
-    for (int i = 1; i < 5; i++)
+    for (int i = 1; i < 4; i++)
     {
       yield return new WaitForSeconds(0.25f);
 
@@ -31,7 +32,11 @@ public class Shooting : MonoBehaviour
         Rigidbody bulletRb = bullet.GetComponent<Rigidbody>();
         bulletRb.AddForce(transform.forward * shotSpeed);
 
-        Destroy(bullet, 3.0f);
+        yield return new WaitForSeconds(0.15f);
+      }
+      if (i == 3)
+      {
+        IntervalKey = true;
         yield break;
       }
     }
