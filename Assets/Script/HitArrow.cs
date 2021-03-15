@@ -12,6 +12,8 @@ public class HitArrow : MonoBehaviour
     Destroy(gameObject);
     GameObject bullet = (GameObject)Instantiate(ArrowIn, transform.position, Quaternion.Euler(transform.eulerAngles.x, transform.eulerAngles.y, transform.eulerAngles.z));
 
+    Destroy(bullet, 15.0f);
+
   }
 
 }

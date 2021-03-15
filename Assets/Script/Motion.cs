@@ -34,6 +34,7 @@ public class Motion : MonoBehaviour
 
   void Shot()
   {
+
     animator.SetTrigger("Shot");
     BowAnimator.SetTrigger("Shot");
   }

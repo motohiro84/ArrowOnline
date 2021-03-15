@@ -8,12 +8,14 @@ public class Shooting : MonoBehaviour
   public GameObject bulletPrefab;
   public float shotSpeed;
   public static bool IntervalKey = true;
+  public static bool ImmovableKey = true;
 
   void Update()
   {
     if (IntervalKey && Input.GetMouseButtonDown(0))
     {
       IntervalKey = false;
+      ImmovableKey = false;
       StartCoroutine("FireShot");
     }
   }
@@ -37,6 +39,7 @@ public class Shooting : MonoBehaviour
       if (i == 3)
       {
         IntervalKey = true;
+        ImmovableKey = true;
         yield break;
       }
     }

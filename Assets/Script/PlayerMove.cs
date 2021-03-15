@@ -31,6 +31,10 @@ public class PlayerMove : MonoBehaviour
     float x = Input.GetAxisRaw("Horizontal");
     float z = Input.GetAxisRaw("Vertical");
 
+    if (!Shooting.ImmovableKey)
+    {
+      return;
+    }
     if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
     {
       MoveKeyCheck();
