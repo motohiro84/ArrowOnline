@@ -15,7 +15,7 @@ public class PlayerMove : MonoBehaviour
 
   void Start()
   {
-    rb = Player.GetComponent<Rigidbody>();
+    // rb = Player.GetComponent<Rigidbody>();
     playerTransform = Player.transform;
     motion = GetComponent<Motion>();
   }
