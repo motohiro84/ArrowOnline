@@ -6133,7 +6133,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 1904658588}
   speed: 4
+  dashForce: 0
   MoveKey: 0
+  dashCT: 0
 --- !u!114 &1904658592
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11360,7 +11362,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Player: {fileID: 8524330454170012434}
   speed: 4
+  dashForce: 50
   MoveKey: 0
+  dashCT: 3
 --- !u!114 &8524330454170012436
 MonoBehaviour:
   m_ObjectHideFlags: 0

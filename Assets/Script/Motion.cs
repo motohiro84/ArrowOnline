@@ -43,5 +43,9 @@ public class Motion : MonoBehaviour
   {
     animator.SetFloat("Move", speed);
   }
+  public void DashMotion()
+  {
+    animator.SetTrigger("Dash");
+  }
 
 }
