@@ -13,6 +13,7 @@ public class PlayerMove : MonoBehaviour
   Motion motion;
   public float dashCT;
   private bool dashKey;
+  private bool obstacleKey = true;
 
 
 
@@ -28,6 +29,7 @@ public class PlayerMove : MonoBehaviour
   void Update()
   {
     Move();
+    obstacleKey = true;
   }
 
 
@@ -56,10 +58,16 @@ public class PlayerMove : MonoBehaviour
       Invoke("DashCT", dashCT);
       return;
     }
+
     if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
     {
       MoveKeyCheck();
       motion.MoveMotion(MoveKey);
+      if (!obstacleKey)
+      {
+        Player.transform.position += (dir * speed * Time.deltaTime) * -1.5f;
+        return;
+      }
       Player.transform.position += dir * speed * Time.deltaTime;
     }
     else
@@ -88,6 +96,38 @@ public class PlayerMove : MonoBehaviour
   void DashCT()
   {
     dashKey = true;
+  }
+
+  Vector3 hitPos;
+  void OnCollisionStay(Collision col)
+  {
+    foreach (ContactPoint point in col.contacts)
+    {
+      hitPos = point.point;
+    }
+
+    if (LayerMask.LayerToName(col.gameObject.layer) == "Obstacle")
+    {
+      obstacleKey = false;
+      Vector3 toVec = GetAngleVec();
+
+      rb.AddForce(toVec * 10, ForceMode.Impulse);
+    }
+    else if (LayerMask.LayerToName(col.gameObject.layer) == "Pillar")
+    {
+      obstacleKey = false;
+      Vector3 toVec = GetAngleVec();
+
+      rb.AddForce(toVec * 5, ForceMode.Impulse);
+    }
+
+  }
+
+  Vector3 GetAngleVec()
+  {
+    Vector3 fromVec = new Vector3(hitPos.x, 0, hitPos.z);
+    Vector3 toVec = new Vector3(Player.transform.position.x, 0, Player.transform.position.z);
+    return Vector3.Normalize(toVec - fromVec);
   }
 
 }
