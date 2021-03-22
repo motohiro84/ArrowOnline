@@ -12,7 +12,6 @@ public class HitArrow : MonoBehaviour
 
   void Start()
   {
-    playerHp = GameObject.Find("Player").GetComponent<PlayerHp>();
   }
 
   void OnCollisionEnter(Collision col)
@@ -23,6 +22,7 @@ public class HitArrow : MonoBehaviour
 
     if (col.gameObject.tag == "Player")
     {
+      playerHp = col.transform.root.gameObject.GetComponent<PlayerHp>();
       partName = col.gameObject;
       playerHp.Damage();
 

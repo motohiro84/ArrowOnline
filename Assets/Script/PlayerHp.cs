@@ -6,11 +6,11 @@ using UnityEngine.UI;
 public class PlayerHp : MonoBehaviour
 {
   [SerializeField]
-  public int maxHp = 100;
+  private int maxHp = 100;
   [SerializeField]
-  public int Hp = 0;
+  private int Hp = 0;
   [SerializeField]
-  public Text CurrentHp;
+  private Text CurrentHp;
   public Image HpGauge;
   private int[] HpDamage = { 100, 40, 20 };
   public GameObject[] Part = new GameObject[3];
