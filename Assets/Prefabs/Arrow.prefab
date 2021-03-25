@@ -93,6 +93,8 @@ GameObject:
   - component: {fileID: 8804003110691499102}
   - component: {fileID: -4559432572027515033}
   - component: {fileID: -5327146369249618591}
+  - component: {fileID: 2223658654632294509}
+  - component: {fileID: 8379637400412212344}
   m_Layer: 0
   m_Name: Arrow
   m_TagString: Untagged
@@ -160,6 +162,42 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ArrowIn: {fileID: 8974512541046676740, guid: 02150178a185d460da1070a5de4e66ed, type: 3}
+--- !u!114 &2223658654632294509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502388176948347031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1308000454, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strixBehaviours:
+  - {fileID: 8379637400412212344}
+  objectType: 1
+  sendRate: 5
+  syncDestroy: 1
+  networkInstanceId: -1
+  InstantiableBy: 1
+  ConnectionClosedBehaviour: 1
+--- !u!114 &8379637400412212344
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502388176948347031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1088213620, guid: f2c2112f638c5b8489d16403d930373b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  syncPosition: 1
+  syncRotation: 1
+  syncVelocity: 1
+  syncAngularVelocity: 1
 --- !u!1 &1502445805852520587
 GameObject:
   m_ObjectHideFlags: 0

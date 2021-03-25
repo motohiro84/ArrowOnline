@@ -10,6 +10,7 @@ public class PlayerMove : MonoBehaviour
   private Transform playerTransform;
   private Rigidbody rb;
   public float MoveKey;
+  public static bool stratMoveKey;
   Motion motion;
   public float dashCT;
   private bool dashKey;
@@ -23,6 +24,9 @@ public class PlayerMove : MonoBehaviour
     rb = Player.GetComponent<Rigidbody>();
     playerTransform = Player.transform;
     motion = GetComponent<Motion>();
+    MoveKey = -1f;
+    motion.MoveMotion(MoveKey);
+    stratMoveKey = false;
   }
 
 
@@ -35,45 +39,48 @@ public class PlayerMove : MonoBehaviour
 
   void Move()
   {
-    float x = Input.GetAxisRaw("Horizontal");
-    float z = Input.GetAxisRaw("Vertical");
-    Vector3 dir = (transform.right * x) + (transform.forward * z);
+    if (stratMoveKey)
+    {
+      float x = Input.GetAxisRaw("Horizontal");
+      float z = Input.GetAxisRaw("Vertical");
+      Vector3 dir = (transform.right * x) + (transform.forward * z);
 
-    if (!Shooting.ImmovableKey)
-    {
-      return;
-    }
-    else if (Input.GetKeyDown(KeyCode.Space) && dashKey)
-    {
-      dashKey = false;
-      if (x == 0 || z == 0)
+      if (!Shooting.ImmovableKey)
       {
-        rb.AddForce(dir * dashForce * 1.5f, ForceMode.Impulse);
+        return;
+      }
+      else if (Input.GetKeyDown(KeyCode.Space) && dashKey)
+      {
+        dashKey = false;
+        if (x == 0 || z == 0)
+        {
+          rb.AddForce(dir * dashForce * 1.5f, ForceMode.Impulse);
+        }
+        else
+        {
+          rb.AddForce(dir * dashForce, ForceMode.Impulse);
+        }
+        motion.DashMotion();
+        Invoke("DashCT", dashCT);
+        return;
+      }
+
+      if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
+      {
+        MoveKeyCheck();
+        motion.MoveMotion(MoveKey);
+        if (!obstacleKey)
+        {
+          Player.transform.position += (dir * speed * Time.deltaTime) * -1.5f;
+          return;
+        }
+        Player.transform.position += dir * speed * Time.deltaTime;
       }
       else
       {
-        rb.AddForce(dir * dashForce, ForceMode.Impulse);
+        MoveKey = -1f;
+        motion.MoveMotion(MoveKey);
       }
-      motion.DashMotion();
-      Invoke("DashCT", dashCT);
-      return;
-    }
-
-    if (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.S) || Input.GetKey(KeyCode.D))
-    {
-      MoveKeyCheck();
-      motion.MoveMotion(MoveKey);
-      if (!obstacleKey)
-      {
-        Player.transform.position += (dir * speed * Time.deltaTime) * -1.5f;
-        return;
-      }
-      Player.transform.position += dir * speed * Time.deltaTime;
-    }
-    else
-    {
-      MoveKey = -1f;
-      motion.MoveMotion(MoveKey);
     }
   }
 
