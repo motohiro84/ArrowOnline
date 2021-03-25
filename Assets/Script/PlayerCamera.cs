@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SoftGear.Strix.Unity.Runtime;
 
-public class PlayerCamera : MonoBehaviour
+public class PlayerCamera : StrixBehaviour
 {
   public GameObject Player;
   public GameObject Camera;
@@ -17,6 +18,10 @@ public class PlayerCamera : MonoBehaviour
     // Cursor.visible = false;
     // Cursor.lockState = CursorLockMode.Locked;
     cameraKey = false;
+    if (isLocal == false)
+    {
+      Camera.SetActive(false);
+    }
   }
 
   // Update is called once per frame

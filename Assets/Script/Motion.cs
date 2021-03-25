@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SoftGear.Strix.Unity.Runtime;
 
-public class Motion : MonoBehaviour
+public class Motion : StrixBehaviour
 {
   public GameObject WoodenBow;
 
@@ -34,6 +35,10 @@ public class Motion : MonoBehaviour
 
   void Shot()
   {
+    if (!isLocal || !PlayerMove.stratMoveKey)
+    {
+      return;
+    }
 
     animator.SetTrigger("Shot");
     BowAnimator.SetTrigger("Shot");

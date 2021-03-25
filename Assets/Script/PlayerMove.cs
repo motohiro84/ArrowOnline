@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SoftGear.Strix.Unity.Runtime;
 
-public class PlayerMove : MonoBehaviour
+public class PlayerMove : StrixBehaviour
 {
   public GameObject Player;
   public float speed;
@@ -39,6 +40,10 @@ public class PlayerMove : MonoBehaviour
 
   void Move()
   {
+    if (isLocal == false)
+    {
+      return;
+    }
     if (stratMoveKey)
     {
       float x = Input.GetAxisRaw("Horizontal");
