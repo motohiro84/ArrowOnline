@@ -12,6 +12,7 @@ public class PlayerCamera : StrixBehaviour
   public static bool cameraKey;
 
   void Start()
+
   {
     CameraTransform = Camera.GetComponent<Transform>();
     CameraTransform.Rotate(360f, 0, 0);

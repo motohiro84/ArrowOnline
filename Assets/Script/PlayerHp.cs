@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using SoftGear.Strix.Unity.Runtime;
 
-public class PlayerHp : MonoBehaviour
+public class PlayerHp : StrixBehaviour
 {
   [SerializeField]
   private int maxHp = 100;
@@ -35,7 +36,6 @@ public class PlayerHp : MonoBehaviour
     HP = maxHp;
   }
 
-  // Update is called once per frame
   void Update()
   {
     if (CurrentHp.text != Hp.ToString())
@@ -51,6 +51,10 @@ public class PlayerHp : MonoBehaviour
 
   public void Damage()
   {
+    if (!isLocal)
+    {
+      return;
+    }
     if (HitArrow.partName == Part[0])
     {
       HP -= HpDamage[0];
