@@ -48,6 +48,11 @@ public class GameManager : MonoBehaviour
     spawnPos = new Vector3(x, spawn.transform.position.y, z);
   }
 
+  public void GameOver()
+  {
+    PlayerMove.stratMoveKey = false;
+  }
+
 
 
 

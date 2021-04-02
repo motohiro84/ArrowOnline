@@ -17,6 +17,7 @@ public class PlayerHp : StrixBehaviour
   public GameObject[] Part = new GameObject[3];
   public GameObject HPUI;
   public GameObject HpCanvas;
+  GameManager gameManager;
 
   public int HP
   {
@@ -52,6 +53,11 @@ public class PlayerHp : StrixBehaviour
     if (CurrentHp.text != HP.ToString())
     {
       NowHp();
+      if (HP == 0)
+      {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        gameManager.GameOver();
+      }
     }
   }
 

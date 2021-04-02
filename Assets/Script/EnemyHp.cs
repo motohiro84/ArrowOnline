@@ -29,6 +29,10 @@ public class EnemyHp : StrixBehaviour
   [StrixRpc]
   public void UpdateHPValue()
   {
+    if (isLocal)
+    {
+      return;
+    }
     hpSlider.value = playerHp.HP / maxHp;
   }
 }
