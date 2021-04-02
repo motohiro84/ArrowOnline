@@ -27,7 +27,7 @@ public class HitArrow : StrixBehaviour
     {
       playerHp = col.transform.root.gameObject.GetComponent<PlayerHp>();
       partName = col.gameObject;
-      RpcToAll("playerHp.Damage");
+      playerHp.RpcToRoomOwner("Damage");
 
       if (fixedJoint == null)
       {
