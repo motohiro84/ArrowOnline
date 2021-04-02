@@ -8,7 +8,7 @@ public class PlayerHp : StrixBehaviour
 {
   [SerializeField]
   private int maxHp = 100;
-  [SerializeField]
+  [StrixSyncField]
   private int Hp = 0;
   [SerializeField]
   private Text CurrentHp;
@@ -17,7 +17,6 @@ public class PlayerHp : StrixBehaviour
   public GameObject[] Part = new GameObject[3];
   public GameObject HPUI;
   public GameObject HpCanvas;
-
 
   public int HP
   {
@@ -46,7 +45,6 @@ public class PlayerHp : StrixBehaviour
 
   void Update()
   {
-    Debug.Log(HP);
     if (CurrentHp.text != HP.ToString())
     {
       NowHp();

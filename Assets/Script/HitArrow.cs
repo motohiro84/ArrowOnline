@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using SoftGear.Strix.Unity.Runtime;
 
-public class HitArrow : MonoBehaviour
+public class HitArrow : StrixBehaviour
 {
   private FixedJoint fixedJoint;
 
@@ -14,6 +15,8 @@ public class HitArrow : MonoBehaviour
   {
   }
 
+
+  [StrixRpc]
   void OnCollisionEnter(Collision col)
   {
 
@@ -24,7 +27,7 @@ public class HitArrow : MonoBehaviour
     {
       playerHp = col.transform.root.gameObject.GetComponent<PlayerHp>();
       partName = col.gameObject;
-      playerHp.Damage();
+      RpcToAll("playerHp.Damage");
 
       if (fixedJoint == null)
       {
