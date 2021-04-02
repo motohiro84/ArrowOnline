@@ -16,6 +16,8 @@ public class PlayerHp : StrixBehaviour
   private int[] HpDamage = { 100, 40, 20 };
   public GameObject[] Part = new GameObject[3];
   public GameObject HPUI;
+  public GameObject HpCanvas;
+
 
   public int HP
   {
@@ -38,12 +40,14 @@ public class PlayerHp : StrixBehaviour
     if (!isLocal)
     {
       HPUI.gameObject.SetActive(true);
+      HpCanvas.SetActive(false);
     }
   }
 
   void Update()
   {
-    if (CurrentHp.text != Hp.ToString())
+    Debug.Log(HP);
+    if (CurrentHp.text != HP.ToString())
     {
       NowHp();
     }
@@ -56,10 +60,6 @@ public class PlayerHp : StrixBehaviour
 
   public void Damage()
   {
-    if (!isLocal)
-    {
-      return;
-    }
     if (HitArrow.partName == Part[0])
     {
       HP -= HpDamage[0];
