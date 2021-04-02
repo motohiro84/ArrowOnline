@@ -40,7 +40,7 @@ public class Motion : StrixBehaviour
       return;
     }
 
-    animator.SetTrigger("Shot");
+    animator.SetTrigger("Shooting");
     BowAnimator.SetTrigger("Shot");
   }
 
