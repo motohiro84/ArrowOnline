@@ -6,9 +6,13 @@ public class GameManager : MonoBehaviour
 {
   public GameObject spawn;
   public GameObject Player;
+  public GameObject Armature;
+  public GameObject Hito;
+  public GameObject GameOverText;
   public GameObject sarcophagi;
   private bool spawnKey = true;
   private Vector3 spawnPos;
+  bool gameOverKey = false;
 
 
 
@@ -20,7 +24,15 @@ public class GameManager : MonoBehaviour
 
   void Update()
   {
-
+    if (gameOverKey && Input.GetKeyDown(KeyCode.Space))
+    {
+      Player.GetComponent<PlayerHp>().HP = 100;
+      SpawnPlayer();
+      PlayerMove.stratMoveKey = true;
+      Armature.SetActive(true);
+      Hito.SetActive(true);
+      GameOverText.SetActive(false);
+    }
   }
 
   void SpawnPlayer()
@@ -51,9 +63,12 @@ public class GameManager : MonoBehaviour
   public void GameOver()
   {
     PlayerMove.stratMoveKey = false;
+    Armature.SetActive(false);
+    Hito.SetActive(false);
+    GameOverText.SetActive(true);
+    spawnKey = true;
+    gameOverKey = true;
   }
-
-
 
 
 }
