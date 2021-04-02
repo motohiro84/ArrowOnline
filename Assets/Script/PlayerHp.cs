@@ -15,6 +15,7 @@ public class PlayerHp : StrixBehaviour
   public Image HpGauge;
   private int[] HpDamage = { 100, 40, 20 };
   public GameObject[] Part = new GameObject[3];
+  public GameObject HPUI;
 
   public int HP
   {
@@ -34,6 +35,10 @@ public class PlayerHp : StrixBehaviour
   void Start()
   {
     HP = maxHp;
+    if (!isLocal)
+    {
+      HPUI.gameObject.SetActive(true);
+    }
   }
 
   void Update()

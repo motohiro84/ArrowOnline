@@ -21,13 +21,16 @@ public class PlayerMove : StrixBehaviour
 
   void Start()
   {
-    dashKey = true;
     rb = Player.GetComponent<Rigidbody>();
     playerTransform = Player.transform;
     motion = GetComponent<Motion>();
     MoveKey = -1f;
     motion.MoveMotion(MoveKey);
-    stratMoveKey = false;
+    if (isLocal)
+    {
+      dashKey = true;
+      stratMoveKey = false;
+    }
   }
 
 

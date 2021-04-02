@@ -14,11 +14,17 @@ public class PlayerCamera : StrixBehaviour
   void Start()
 
   {
+    if (isLocal == false)
+    {
+      Camera.SetActive(false);
+    }
+    TPS();
     CameraTransform = Camera.GetComponent<Transform>();
     CameraTransform.Rotate(360f, 0, 0);
-    // Cursor.visible = false;
-    // Cursor.lockState = CursorLockMode.Locked;
-    cameraKey = false;
+    if (isLocal)
+    {
+      cameraKey = false;
+    }
   }
 
   // Update is called once per frame
@@ -29,10 +35,6 @@ public class PlayerCamera : StrixBehaviour
 
   void TPS()
   {
-    if (isLocal == false)
-    {
-      return;
-    }
     if (cameraKey)
     {
       float X_Rotation = Input.GetAxis("Mouse X");
