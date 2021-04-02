@@ -60,6 +60,7 @@ public class PlayerHp : StrixBehaviour
     CurrentHp.text = Hp.ToString();
   }
 
+  [StrixRpc]
   public void Damage()
   {
     if (HitArrow.partName == Part[0])

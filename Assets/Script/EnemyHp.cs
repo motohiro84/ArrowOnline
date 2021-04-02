@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using SoftGear.Strix.Unity.Runtime;
 
-public class EnemyHp : MonoBehaviour
+public class EnemyHp : StrixBehaviour
 {
   [SerializeField]
   private float maxHp = 100;
@@ -25,6 +26,7 @@ public class EnemyHp : MonoBehaviour
     UpdateHPValue();
   }
 
+  [StrixRpc]
   public void UpdateHPValue()
   {
     hpSlider.value = playerHp.HP / maxHp;
