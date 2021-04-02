@@ -9,7 +9,7 @@ public class PlayerHp : StrixBehaviour
   [SerializeField]
   private int maxHp = 100;
   [StrixSyncField]
-  private int Hp = 0;
+  public int Hp = 0;
   [SerializeField]
   private Text CurrentHp;
   public Image HpGauge;
@@ -45,6 +45,10 @@ public class PlayerHp : StrixBehaviour
 
   void Update()
   {
+    if (!isLocal)
+    {
+      return;
+    }
     if (CurrentHp.text != HP.ToString())
     {
       NowHp();
@@ -56,7 +60,6 @@ public class PlayerHp : StrixBehaviour
     CurrentHp.text = Hp.ToString();
   }
 
-  [StrixRpc]
   public void Damage()
   {
     if (HitArrow.partName == Part[0])
